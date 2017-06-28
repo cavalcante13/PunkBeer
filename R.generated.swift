@@ -44,12 +44,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `BeerCollectionViewCell`.
     static let beerCollectionViewCell = _R.nib._BeerCollectionViewCell()
     /// Nib `BeerViewController`.
     static let beerViewController = _R.nib._BeerViewController()
+    /// Nib `DetailBeerViewController`.
+    static let detailBeerViewController = _R.nib._DetailBeerViewController()
     
     /// `UINib(name: "BeerCollectionViewCell", in: bundle)`
     static func beerCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -59,6 +61,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "BeerViewController", in: bundle)`
     static func beerViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.beerViewController)
+    }
+    
+    /// `UINib(name: "DetailBeerViewController", in: bundle)`
+    static func detailBeerViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.detailBeerViewController)
     }
     
     fileprivate init() {}
@@ -90,7 +97,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
     /// This `R.string.beer` struct is generated, and contains static references to 1 localization keys.
     struct beer {
@@ -105,12 +112,25 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This `R.string.endPoint` struct is generated, and contains static references to 1 localization keys.
+    struct endPoint {
+      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=40
+      static let httpsApiPunkapiComV2BeersPageDPer_page40 = Rswift.StringResource(key: "https://api.punkapi.com/v2/beers?page=%d&per_page=40", tableName: "EndPoint", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=40
+      static func httpsApiPunkapiComV2BeersPageDPer_page40(_ value1: Int) -> String {
+        return String(format: NSLocalizedString("https://api.punkapi.com/v2/beers?page=%d&per_page=40", tableName: "EndPoint", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -121,8 +141,16 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
-  struct nib {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try nib.validate()
+  }
+  
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _DetailBeerViewController.validate()
+    }
+    
     struct _BeerCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = BeerCollectionViewCell
       
@@ -143,6 +171,21 @@ struct _R {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _DetailBeerViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "DetailBeerViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "icBeerPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icBeerPlaceholder' is used in nib 'DetailBeerViewController', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

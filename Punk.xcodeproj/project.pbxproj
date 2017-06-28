@@ -11,6 +11,9 @@
 		C30E1F0C1F034E1600658AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0B1F034E1600658AB2 /* Assets.xcassets */; };
 		C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0D1F034E1600658AB2 /* LaunchScreen.storyboard */; };
 		C30E1F1A1F034E1600658AB2 /* PunkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E1F191F034E1600658AB2 /* PunkTests.swift */; };
+		C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */; };
+		C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */; };
+		C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B749C11F042B80005ED0E3 /* EndPoint.strings */; };
 		C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB675D1F03518B00E2D230 /* R.generated.swift */; };
 		C3DB67631F03524500E2D230 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB67621F03524500E2D230 /* BeerViewController.swift */; };
 		C3DB67671F03527E00E2D230 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB67661F03527E00E2D230 /* BaseNavigationController.swift */; };
@@ -51,6 +54,9 @@
 		C30E1F151F034E1600658AB2 /* PunkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E1F191F034E1600658AB2 /* PunkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkTests.swift; sourceTree = "<group>"; };
 		C30E1F1B1F034E1600658AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
+		C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBeerViewController.xib; sourceTree = "<group>"; };
+		C3B749C11F042B80005ED0E3 /* EndPoint.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EndPoint.strings; sourceTree = "<group>"; };
 		C3DB675D1F03518B00E2D230 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		C3DB67621F03524500E2D230 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		C3DB67661F03527E00E2D230 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				C3DB67711F035C1A00E2D230 /* Extensions */,
 				C3DB67761F036A6100E2D230 /* Protocols */,
 				C3DB67641F03524F00E2D230 /* Commons */,
+				C3DB67691F03545800E2D230 /* Models */,
 				C3DB675F1F0351A500E2D230 /* Scenes */,
 				C30E1F241F034E2A00658AB2 /* Support Files */,
 			);
@@ -139,23 +146,40 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		C3B749B91F0426F4005ED0E3 /* DetailBeer */ = {
+			isa = PBXGroup;
+			children = (
+				C3B749BA1F042703005ED0E3 /* ViewController */,
+			);
+			name = DetailBeer;
+			sourceTree = "<group>";
+		};
+		C3B749BA1F042703005ED0E3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */,
+				C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		C3DB675F1F0351A500E2D230 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C3DB67601F0351E800E2D230 /* Beer */,
+				C3DB67601F0351E800E2D230 /* HomeBeer */,
+				C3B749B91F0426F4005ED0E3 /* DetailBeer */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
 		};
-		C3DB67601F0351E800E2D230 /* Beer */ = {
+		C3DB67601F0351E800E2D230 /* HomeBeer */ = {
 			isa = PBXGroup;
 			children = (
 				C3DB67611F03520C00E2D230 /* ViewController */,
 				C3DB676A1F03554200E2D230 /* Views */,
-				C3DB67691F03545800E2D230 /* Models */,
 				C3DB677B1F0373B700E2D230 /* Mixins */,
 			);
-			name = Beer;
+			name = HomeBeer;
 			sourceTree = "<group>";
 		};
 		C3DB67611F03520C00E2D230 /* ViewController */ = {
@@ -187,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				C30E1F041F034E1600658AB2 /* AppDelegate.swift */,
+				C3B749C11F042B80005ED0E3 /* EndPoint.strings */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -311,6 +336,7 @@
 				TargetAttributes = {
 					C30E1F001F034E1600658AB2 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = UD45WCJZR5;
 						ProvisioningStyle = Automatic;
 					};
 					C30E1F141F034E1600658AB2 = {
@@ -345,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DB67751F035F2D00E2D230 /* BeerViewController.xib in Resources */,
+				C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */,
+				C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */,
 				C3DB677D1F0373DD00E2D230 /* Beer.strings in Resources */,
 				C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */,
 				C3DB676E1F03557D00E2D230 /* BeerCollectionViewCell.xib in Resources */,
@@ -477,6 +505,7 @@
 				C3DB67701F0358E000E2D230 /* Beer.swift in Sources */,
 				C3DB67811F03AAF100E2D230 /* Castable.swift in Sources */,
 				C3DB677A1F036AA100E2D230 /* RestableService.swift in Sources */,
+				C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */,
 				C30E1F051F034E1600658AB2 /* AppDelegate.swift in Sources */,
 				C3DB67791F036AA100E2D230 /* Restable.swift in Sources */,
 				C3DB676D1F03557D00E2D230 /* BeerCollectionViewCell.swift in Sources */,
@@ -614,6 +643,7 @@
 			baseConfigurationReference = A88FE62557EF4F30475EA9F0 /* Pods-Punk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UD45WCJZR5;
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.punk;
@@ -627,6 +657,7 @@
 			baseConfigurationReference = 418B4A25F0D8FFAC1735E15A /* Pods-Punk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UD45WCJZR5;
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.punk;

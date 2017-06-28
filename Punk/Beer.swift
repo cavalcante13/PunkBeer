@@ -35,7 +35,9 @@ extension Beer {
                 beer.name       = json["name"] as? String
                 beer.imageUrl   = json["image_url"] as? String
                 beer.abv        = json["abv"] as? Double
-                
+                beer.desc       = json["description"] as? String
+                beer.tagline    = json["tagline"] as? String
+                beer.ibu        = json["ibu"] as? Int
                 beers.append(beer)
             }
         }
