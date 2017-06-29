@@ -51,7 +51,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `BeerCollectionViewCell`.
     static let beerCollectionViewCell = _R.nib._BeerCollectionViewCell()
@@ -61,8 +61,6 @@ struct R: Rswift.Validatable {
     static let detailBeerViewController = _R.nib._DetailBeerViewController()
     /// Nib `LoadMoreCollectionViewCell`.
     static let loadMoreCollectionViewCell = _R.nib._LoadMoreCollectionViewCell()
-    /// Nib `SearchView`.
-    static let searchView = _R.nib._SearchView()
     
     /// `UINib(name: "BeerCollectionViewCell", in: bundle)`
     static func beerCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -82,11 +80,6 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "LoadMoreCollectionViewCell", in: bundle)`
     static func loadMoreCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loadMoreCollectionViewCell)
-    }
-    
-    /// `UINib(name: "SearchView", in: bundle)`
-    static func searchView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.searchView)
     }
     
     fileprivate init() {}
@@ -172,7 +165,6 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _DetailBeerViewController.validate()
-      try _SearchView.validate()
     }
     
     struct _BeerCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
@@ -224,21 +216,6 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> LoadMoreCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadMoreCollectionViewCell
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _SearchView: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "SearchView"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SearchView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchView
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "icSearch", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icSearch' is used in nib 'SearchView', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

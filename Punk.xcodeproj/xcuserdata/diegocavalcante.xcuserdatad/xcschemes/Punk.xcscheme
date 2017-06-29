@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Punk.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C339CCDF1F053C0800A2C2CA"
+               BuildableName = "PunkServiceRequestTests.xctest"
+               BlueprintName = "PunkServiceRequestTests"
+               ReferencedContainer = "container:Punk.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

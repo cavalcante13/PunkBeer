@@ -11,8 +11,6 @@ import UIKit
 final class BeerViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private lazy var searchView : SearchView = SearchView.instance()
-    
     final fileprivate var beers : [Beer] = [Beer]()
     
     final fileprivate var page         = 1
@@ -24,7 +22,6 @@ final class BeerViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setup()
-        setupCollectionViewFlowLayout()
         loadBeers()
     }
     
@@ -38,27 +35,15 @@ final class BeerViewController: UIViewController {
         collectionView.delegate            = self
         collectionView.dataSource          = self
         collectionView.backgroundColor     = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
-        
     }
-    
-    final fileprivate func setupCollectionViewFlowLayout() {
-        let collectionLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        collectionLayout.scrollDirection         = .vertical
-        collectionLayout.minimumInteritemSpacing = 8
-        collectionLayout.minimumLineSpacing      = 8
-        collectionLayout.sectionInset            = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
-        let spaces = collectionLayout.minimumInteritemSpacing + collectionLayout.sectionInset.left + collectionLayout.sectionInset.right
-        collectionLayout.itemSize = CGSize(width: (UIScreen.main.bounds.width - spaces) / 2, height: UIScreen.main.bounds.size.height / 2)
-    }
-    
-    final fileprivate func loadBeers() {
+   
+    final internal func loadBeers() {
         AppStyle.startActivityIndicator()
         let service : RestableService<Beer> = RestableService<Beer>(path: R.string.endPoint.httpsApiPunkapiComV2BeersPageDPer_pageD(page, limitPerPage))
         service.get(parse: Beer.init, callback: callBack())
     }
     
-    final fileprivate func callBack()-> (Any)-> () {
+    final internal func callBack()-> (Any)-> () {
         return { [weak self] callback in
             if let context = self {
                 if let beer = callback as? Beer {
@@ -73,7 +58,7 @@ final class BeerViewController: UIViewController {
         }
     }
     
-    final fileprivate func adjustMaxPages(with totalItens : Int) {
+    final internal func adjustMaxPages(with totalItens : Int) {
         page += 1
         maxPage = totalItens % limitPerPage == 0 ? page + 1 : page
     }
@@ -81,6 +66,33 @@ final class BeerViewController: UIViewController {
     final fileprivate func resetPages() {
         page    = 1
         maxPage = 1
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { [weak self] context in
+            self?.collectionView?.collectionViewLayout.invalidateLayout()
+            }, completion: nil)
+    }
+}
+extension BeerViewController : UICollectionViewDelegateFlowLayout {
+   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.sectionInset  = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        let columns: Int = {
+            var count = 2
+            if traitCollection.horizontalSizeClass == .regular              { count += 1 }
+            if collectionView.bounds.width > collectionView.bounds.height   { count += 1 }
+            return count
+        }()
+        
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(columns - 1))
+        
+        let width = Int((collectionView.bounds.width - totalSpace) / CGFloat(columns))
+        return CGSize(width: CGFloat(width), height: traitCollection.verticalSizeClass == .compact ? UIScreen.main.bounds.size.height : UIScreen.main.bounds.size.height / 2)
     }
 }
 

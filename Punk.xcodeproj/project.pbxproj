@@ -15,8 +15,7 @@
 		C33113541F04889F0058CE7C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */; };
 		C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */; };
 		C331135B1F048C590058CE7C /* LoadMoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */; };
-		C331135F1F04902A0058CE7C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331135E1F04902A0058CE7C /* SearchView.swift */; };
-		C33113611F0490570058CE7C /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33113601F0490570058CE7C /* SearchView.xib */; };
+		C339CCEF1F053F3800A2C2CA /* PunkRestableServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C339CCEE1F053F3800A2C2CA /* PunkRestableServiceTests.swift */; };
 		C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */; };
 		C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */; };
 		C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B749C11F042B80005ED0E3 /* EndPoint.strings */; };
@@ -44,6 +43,13 @@
 			remoteGlobalIDString = C30E1F001F034E1600658AB2;
 			remoteInfo = Punk;
 		};
+		C339CCE51F053C0800A2C2CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C30E1EF91F034E1600658AB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C30E1F001F034E1600658AB2;
+			remoteInfo = Punk;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +70,9 @@
 		C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreCollectionViewCell.xib; sourceTree = "<group>"; };
-		C331135E1F04902A0058CE7C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		C33113601F0490570058CE7C /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		C339CCE01F053C0800A2C2CA /* PunkServiceRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunkServiceRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C339CCE41F053C0800A2C2CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C339CCEE1F053F3800A2C2CA /* PunkRestableServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunkRestableServiceTests.swift; sourceTree = "<group>"; };
 		C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBeerViewController.xib; sourceTree = "<group>"; };
 		C3B749C11F042B80005ED0E3 /* EndPoint.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EndPoint.strings; sourceTree = "<group>"; };
@@ -101,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C339CCDD1F053C0800A2C2CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C30E1F031F034E1600658AB2 /* Punk */,
+				C339CCE11F053C0800A2C2CA /* PunkServiceRequestTests */,
 				C30E1F181F034E1600658AB2 /* PunkTests */,
 				C30E1F021F034E1600658AB2 /* Products */,
 				F8FD8B9F56C9459298E27184 /* Pods */,
@@ -120,6 +135,7 @@
 			children = (
 				C30E1F011F034E1600658AB2 /* Punk.app */,
 				C30E1F151F034E1600658AB2 /* PunkTests.xctest */,
+				C339CCE01F053C0800A2C2CA /* PunkServiceRequestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,10 +187,33 @@
 			children = (
 				C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */,
 				C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */,
-				C331135E1F04902A0058CE7C /* SearchView.swift */,
-				C33113601F0490570058CE7C /* SearchView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C339CCE11F053C0800A2C2CA /* PunkServiceRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				C339CCEB1F053C4700A2C2CA /* Cases */,
+				C339CCEA1F053C3200A2C2CA /* Supporting Files */,
+			);
+			path = PunkServiceRequestTests;
+			sourceTree = "<group>";
+		};
+		C339CCEA1F053C3200A2C2CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C339CCE41F053C0800A2C2CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C339CCEB1F053C4700A2C2CA /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				C339CCEE1F053F3800A2C2CA /* PunkRestableServiceTests.swift */,
+			);
+			name = Cases;
 			sourceTree = "<group>";
 		};
 		C3B749B91F0426F4005ED0E3 /* DetailBeer */ = {
@@ -358,6 +397,24 @@
 			productReference = C30E1F151F034E1600658AB2 /* PunkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C339CCDF1F053C0800A2C2CA /* PunkServiceRequestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C339CCE71F053C0800A2C2CA /* Build configuration list for PBXNativeTarget "PunkServiceRequestTests" */;
+			buildPhases = (
+				C339CCDC1F053C0800A2C2CA /* Sources */,
+				C339CCDD1F053C0800A2C2CA /* Frameworks */,
+				C339CCDE1F053C0800A2C2CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C339CCE61F053C0800A2C2CA /* PBXTargetDependency */,
+			);
+			name = PunkServiceRequestTests;
+			productName = PunkServiceRequestTests;
+			productReference = C339CCE01F053C0800A2C2CA /* PunkServiceRequestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -370,10 +427,14 @@
 				TargetAttributes = {
 					C30E1F001F034E1600658AB2 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = UD45WCJZR5;
 						ProvisioningStyle = Automatic;
 					};
 					C30E1F141F034E1600658AB2 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C30E1F001F034E1600658AB2;
+					};
+					C339CCDF1F053C0800A2C2CA = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C30E1F001F034E1600658AB2;
@@ -395,6 +456,7 @@
 			targets = (
 				C30E1F001F034E1600658AB2 /* Punk */,
 				C30E1F141F034E1600658AB2 /* PunkTests */,
+				C339CCDF1F053C0800A2C2CA /* PunkServiceRequestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +471,6 @@
 				C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */,
 				C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */,
 				C3DB677D1F0373DD00E2D230 /* Beer.strings in Resources */,
-				C33113611F0490570058CE7C /* SearchView.xib in Resources */,
 				C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */,
 				C3DB676E1F03557D00E2D230 /* BeerCollectionViewCell.xib in Resources */,
 				C30E1F0C1F034E1600658AB2 /* Assets.xcassets in Resources */,
@@ -417,6 +478,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C30E1F131F034E1600658AB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C339CCDE1F053C0800A2C2CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -547,7 +615,6 @@
 				C30E1F051F034E1600658AB2 /* AppDelegate.swift in Sources */,
 				C3DB67791F036AA100E2D230 /* Restable.swift in Sources */,
 				C3DB676D1F03557D00E2D230 /* BeerCollectionViewCell.swift in Sources */,
-				C331135F1F04902A0058CE7C /* SearchView.swift in Sources */,
 				C33113541F04889F0058CE7C /* UIViewControllerExtension.swift in Sources */,
 				C3DB67731F035C2E00E2D230 /* UIViewExtension.swift in Sources */,
 				C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */,
@@ -563,6 +630,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C339CCDC1F053C0800A2C2CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C339CCEF1F053F3800A2C2CA /* PunkRestableServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -570,6 +645,11 @@
 			isa = PBXTargetDependency;
 			target = C30E1F001F034E1600658AB2 /* Punk */;
 			targetProxy = C30E1F161F034E1600658AB2 /* PBXContainerItemProxy */;
+		};
+		C339CCE61F053C0800A2C2CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C30E1F001F034E1600658AB2 /* Punk */;
+			targetProxy = C339CCE51F053C0800A2C2CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -683,10 +763,10 @@
 			baseConfigurationReference = A88FE62557EF4F30475EA9F0 /* Pods-Punk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UD45WCJZR5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.punk;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.costa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -697,10 +777,10 @@
 			baseConfigurationReference = 418B4A25F0D8FFAC1735E15A /* Pods-Punk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UD45WCJZR5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.punk;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.costa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -736,6 +816,32 @@
 			};
 			name = Release;
 		};
+		C339CCE81F053C0800A2C2CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PunkServiceRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.PunkServiceRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Punk.app/Punk";
+			};
+			name = Debug;
+		};
+		C339CCE91F053C0800A2C2CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PunkServiceRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.cavalcante.PunkServiceRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Punk.app/Punk";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -765,6 +871,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C339CCE71F053C0800A2C2CA /* Build configuration list for PBXNativeTarget "PunkServiceRequestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C339CCE81F053C0800A2C2CA /* Debug */,
+				C339CCE91F053C0800A2C2CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
