@@ -11,8 +11,14 @@ import UIKit
 final class BeerViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    private lazy var searchView : SearchView = SearchView.instance()
+    
     final fileprivate var beers : [Beer] = [Beer]()
-    final fileprivate var page  = 1
+    
+    final fileprivate var page         = 1
+    final fileprivate var maxPage      = 1
+    final fileprivate var limitPerPage = 20
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,7 @@ final class BeerViewController: UIViewController {
     
     final fileprivate func registerCells() {
         collectionView.register(R.nib.beerCollectionViewCell)
+        collectionView.register(R.nib.loadMoreCollectionViewCell)
     }
     
     final fileprivate func setup() {
@@ -31,6 +38,7 @@ final class BeerViewController: UIViewController {
         collectionView.delegate            = self
         collectionView.dataSource          = self
         collectionView.backgroundColor     = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        
     }
     
     final fileprivate func setupCollectionViewFlowLayout() {
@@ -45,7 +53,8 @@ final class BeerViewController: UIViewController {
     }
     
     final fileprivate func loadBeers() {
-        let service : RestableService<Beer> = RestableService<Beer>(path: R.string.endPoint.httpsApiPunkapiComV2BeersPageDPer_page40(page))
+        AppStyle.startActivityIndicator()
+        let service : RestableService<Beer> = RestableService<Beer>(path: R.string.endPoint.httpsApiPunkapiComV2BeersPageDPer_pageD(page, limitPerPage))
         service.get(parse: Beer.init, callback: callBack())
     }
     
@@ -54,25 +63,43 @@ final class BeerViewController: UIViewController {
             if let context = self {
                 if let beer = callback as? Beer {
                     context.beers += beer.beers
+                    context.adjustMaxPages(with: context.beers.count)
                     context.collectionView.reloadData()
                 }else if let error = callback as? Error {
-                    print(error)
+                    context.confirmAlert(title: "Erro", description: error.localizedDescription, action: nil)
                 }
+                AppStyle.stopActivityIndicator()
             }
         }
+    }
+    
+    final fileprivate func adjustMaxPages(with totalItens : Int) {
+        page += 1
+        maxPage = totalItens % limitPerPage == 0 ? page + 1 : page
+    }
+    
+    final fileprivate func resetPages() {
+        page    = 1
+        maxPage = 1
     }
 }
 
 extension BeerViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return beers.count
+        return page < maxPage ? beers.count + 1 : beers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.beerCollectionViewCell.identifier, for: indexPath) as! BeerCollectionViewCell
-        cell.beer = beers[indexPath.item]
-        return cell
+        if indexPath.item < beers.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.beerCollectionViewCell.identifier, for: indexPath) as! BeerCollectionViewCell
+            cell.beer = beers[indexPath.item]
+            return cell
+        }else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.loadMoreCollectionViewCell.identifier, for: indexPath)
+            loadBeers()
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

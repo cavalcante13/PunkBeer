@@ -18,7 +18,8 @@ class DetailBeerViewController: UIViewController {
     
     private var beer : Beer
     
-    
+    //This ViewController has size class for landscape, the Discription change the position when landscape active.
+    //Please see in Interface Builder
     init(beer : Beer) {
         self.beer = beer
         super.init(nibName: nil, bundle: nil)

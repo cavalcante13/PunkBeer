@@ -8,6 +8,7 @@ target 'Punk' do
   # Pods for Punk
   pod 'R.swift' 	
   pod 'SDWebImage'
+  pod 'SVProgressHUD'
 
   target 'PunkTests' do
     inherit! :search_paths

@@ -13,6 +13,7 @@ import Foundation
 class Beer : NSObject {
     
     // maintain a weak reference
+    var id          = 0
     var name        : String?
     var imageUrl    : String?
     var abv         : Double?
@@ -32,6 +33,7 @@ extension Beer {
             
             for json in jsonArray {
                 let beer = Beer()
+                beer.id         = json["id"] as? Int ?? 0
                 beer.name       = json["name"] as? String
                 beer.imageUrl   = json["image_url"] as? String
                 beer.abv        = json["abv"] as? Double

@@ -9,4 +9,4 @@
 
 
 
-"https://api.punkapi.com/v2/beers?page=%d&per_page=40" = "https://api.punkapi.com/v2/beers?page=%d&per_page=40";
+"https://api.punkapi.com/v2/beers?page=%d&per_page=%d" = "https://api.punkapi.com/v2/beers?page=%d&per_page=%d";

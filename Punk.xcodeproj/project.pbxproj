@@ -11,6 +11,12 @@
 		C30E1F0C1F034E1600658AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0B1F034E1600658AB2 /* Assets.xcassets */; };
 		C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0D1F034E1600658AB2 /* LaunchScreen.storyboard */; };
 		C30E1F1A1F034E1600658AB2 /* PunkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E1F191F034E1600658AB2 /* PunkTests.swift */; };
+		C33113521F0488400058CE7C /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113511F0488400058CE7C /* AppStyle.swift */; };
+		C33113541F04889F0058CE7C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */; };
+		C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */; };
+		C331135B1F048C590058CE7C /* LoadMoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */; };
+		C331135F1F04902A0058CE7C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331135E1F04902A0058CE7C /* SearchView.swift */; };
+		C33113611F0490570058CE7C /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33113601F0490570058CE7C /* SearchView.xib */; };
 		C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */; };
 		C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */; };
 		C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B749C11F042B80005ED0E3 /* EndPoint.strings */; };
@@ -54,6 +60,12 @@
 		C30E1F151F034E1600658AB2 /* PunkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E1F191F034E1600658AB2 /* PunkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkTests.swift; sourceTree = "<group>"; };
 		C30E1F1B1F034E1600658AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33113511F0488400058CE7C /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		C331135E1F04902A0058CE7C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		C33113601F0490570058CE7C /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBeerViewController.xib; sourceTree = "<group>"; };
 		C3B749C11F042B80005ED0E3 /* EndPoint.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EndPoint.strings; sourceTree = "<group>"; };
@@ -146,6 +158,25 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		C33113501F04882F0058CE7C /* AppStyle */ = {
+			isa = PBXGroup;
+			children = (
+				C33113511F0488400058CE7C /* AppStyle.swift */,
+			);
+			name = AppStyle;
+			sourceTree = "<group>";
+		};
+		C33113551F048C240058CE7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */,
+				C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */,
+				C331135E1F04902A0058CE7C /* SearchView.swift */,
+				C33113601F0490570058CE7C /* SearchView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		C3B749B91F0426F4005ED0E3 /* DetailBeer */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				C3DB67651F03526100E2D230 /* NavigationControllers */,
+				C33113551F048C240058CE7C /* Views */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -212,6 +244,7 @@
 			children = (
 				C30E1F041F034E1600658AB2 /* AppDelegate.swift */,
 				C3B749C11F042B80005ED0E3 /* EndPoint.strings */,
+				C33113501F04882F0058CE7C /* AppStyle */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -236,6 +269,7 @@
 		C3DB67711F035C1A00E2D230 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */,
 				C3DB67721F035C2E00E2D230 /* UIViewExtension.swift */,
 			);
 			name = Extensions;
@@ -371,9 +405,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DB67751F035F2D00E2D230 /* BeerViewController.xib in Resources */,
+				C331135B1F048C590058CE7C /* LoadMoreCollectionViewCell.xib in Resources */,
 				C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */,
 				C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */,
 				C3DB677D1F0373DD00E2D230 /* Beer.strings in Resources */,
+				C33113611F0490570058CE7C /* SearchView.xib in Resources */,
 				C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */,
 				C3DB676E1F03557D00E2D230 /* BeerCollectionViewCell.xib in Resources */,
 				C30E1F0C1F034E1600658AB2 /* Assets.xcassets in Resources */,
@@ -504,11 +540,15 @@
 				C3DB67671F03527E00E2D230 /* BaseNavigationController.swift in Sources */,
 				C3DB67701F0358E000E2D230 /* Beer.swift in Sources */,
 				C3DB67811F03AAF100E2D230 /* Castable.swift in Sources */,
+				C33113521F0488400058CE7C /* AppStyle.swift in Sources */,
+				C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */,
 				C3DB677A1F036AA100E2D230 /* RestableService.swift in Sources */,
 				C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */,
 				C30E1F051F034E1600658AB2 /* AppDelegate.swift in Sources */,
 				C3DB67791F036AA100E2D230 /* Restable.swift in Sources */,
 				C3DB676D1F03557D00E2D230 /* BeerCollectionViewCell.swift in Sources */,
+				C331135F1F04902A0058CE7C /* SearchView.swift in Sources */,
+				C33113541F04889F0058CE7C /* UIViewControllerExtension.swift in Sources */,
 				C3DB67731F035C2E00E2D230 /* UIViewExtension.swift in Sources */,
 				C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */,
 				C3DB67631F03524500E2D230 /* BeerViewController.swift in Sources */,

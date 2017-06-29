@@ -31,20 +31,27 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `icBeerPlaceholder`.
     static let icBeerPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "icBeerPlaceholder")
+    /// Image `icSearch`.
+    static let icSearch = Rswift.ImageResource(bundle: R.hostingBundle, name: "icSearch")
     
     /// `UIImage(named: "icBeerPlaceholder", bundle: ..., traitCollection: ...)`
     static func icBeerPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icBeerPlaceholder, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "icSearch", bundle: ..., traitCollection: ...)`
+    static func icSearch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icSearch, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `BeerCollectionViewCell`.
     static let beerCollectionViewCell = _R.nib._BeerCollectionViewCell()
@@ -52,6 +59,10 @@ struct R: Rswift.Validatable {
     static let beerViewController = _R.nib._BeerViewController()
     /// Nib `DetailBeerViewController`.
     static let detailBeerViewController = _R.nib._DetailBeerViewController()
+    /// Nib `LoadMoreCollectionViewCell`.
+    static let loadMoreCollectionViewCell = _R.nib._LoadMoreCollectionViewCell()
+    /// Nib `SearchView`.
+    static let searchView = _R.nib._SearchView()
     
     /// `UINib(name: "BeerCollectionViewCell", in: bundle)`
     static func beerCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -68,13 +79,25 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.detailBeerViewController)
     }
     
+    /// `UINib(name: "LoadMoreCollectionViewCell", in: bundle)`
+    static func loadMoreCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loadMoreCollectionViewCell)
+    }
+    
+    /// `UINib(name: "SearchView", in: bundle)`
+    static func searchView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchView)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `BeerCollectionViewCell`.
     static let beerCollectionViewCell: Rswift.ReuseIdentifier<BeerCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "BeerCollectionViewCell")
+    /// Reuse identifier `LoadMoreCollectionViewCell`.
+    static let loadMoreCollectionViewCell: Rswift.ReuseIdentifier<LoadMoreCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "LoadMoreCollectionViewCell")
     
     fileprivate init() {}
   }
@@ -114,12 +137,12 @@ struct R: Rswift.Validatable {
     
     /// This `R.string.endPoint` struct is generated, and contains static references to 1 localization keys.
     struct endPoint {
-      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=40
-      static let httpsApiPunkapiComV2BeersPageDPer_page40 = Rswift.StringResource(key: "https://api.punkapi.com/v2/beers?page=%d&per_page=40", tableName: "EndPoint", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=%d
+      static let httpsApiPunkapiComV2BeersPageDPer_pageD = Rswift.StringResource(key: "https://api.punkapi.com/v2/beers?page=%d&per_page=%d", tableName: "EndPoint", bundle: R.hostingBundle, locales: [], comment: nil)
       
-      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=40
-      static func httpsApiPunkapiComV2BeersPageDPer_page40(_ value1: Int) -> String {
-        return String(format: NSLocalizedString("https://api.punkapi.com/v2/beers?page=%d&per_page=40", tableName: "EndPoint", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      /// Value: https://api.punkapi.com/v2/beers?page=%d&per_page=%d
+      static func httpsApiPunkapiComV2BeersPageDPer_pageD(_ value1: Int, _ value2: Int) -> String {
+        return String(format: NSLocalizedString("https://api.punkapi.com/v2/beers?page=%d&per_page=%d", tableName: "EndPoint", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1, value2)
       }
       
       fileprivate init() {}
@@ -149,6 +172,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _DetailBeerViewController.validate()
+      try _SearchView.validate()
     }
     
     struct _BeerCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
@@ -186,6 +210,35 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "icBeerPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icBeerPlaceholder' is used in nib 'DetailBeerViewController', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _LoadMoreCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = LoadMoreCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "LoadMoreCollectionViewCell"
+      let name = "LoadMoreCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> LoadMoreCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadMoreCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SearchView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SearchView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SearchView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "icSearch", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icSearch' is used in nib 'SearchView', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
