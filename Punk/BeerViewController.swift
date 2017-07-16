@@ -80,6 +80,7 @@ extension BeerViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.sectionInset  = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        
         let columns: Int = {
             var count = 2
             if traitCollection.horizontalSizeClass == .regular              { count += 1 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30A4A9C1F0B912A007B628F /* BaseDetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A4A9B1F0B912A007B628F /* BaseDetailNavigationController.swift */; };
+		C30A4A9F1F0B9210007B628F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A4A9D1F0B9210007B628F /* TestViewController.swift */; };
+		C30A4AA01F0B9210007B628F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30A4A9E1F0B9210007B628F /* TestViewController.xib */; };
 		C30E1F051F034E1600658AB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E1F041F034E1600658AB2 /* AppDelegate.swift */; };
 		C30E1F0C1F034E1600658AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0B1F034E1600658AB2 /* Assets.xcassets */; };
 		C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30E1F0D1F034E1600658AB2 /* LaunchScreen.storyboard */; };
@@ -58,6 +61,9 @@
 		0EAF4131F4A9242BAB21539D /* Pods_Punk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		418B4A25F0D8FFAC1735E15A /* Pods-Punk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Punk/Pods-Punk.release.xcconfig"; sourceTree = "<group>"; };
 		A88FE62557EF4F30475EA9F0 /* Pods-Punk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Punk/Pods-Punk.debug.xcconfig"; sourceTree = "<group>"; };
+		C30A4A9B1F0B912A007B628F /* BaseDetailNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDetailNavigationController.swift; sourceTree = "<group>"; };
+		C30A4A9D1F0B9210007B628F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		C30A4A9E1F0B9210007B628F /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		C30E1F011F034E1600658AB2 /* Punk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E1F041F034E1600658AB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C30E1F0B1F034E1600658AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 			children = (
 				C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */,
 				C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */,
+				C30A4A9D1F0B9210007B628F /* TestViewController.swift */,
+				C30A4A9E1F0B9210007B628F /* TestViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				C3DB67661F03527E00E2D230 /* BaseNavigationController.swift */,
+				C30A4A9B1F0B912A007B628F /* BaseDetailNavigationController.swift */,
 			);
 			name = NavigationControllers;
 			sourceTree = "<group>";
@@ -317,8 +326,8 @@
 		C3DB67761F036A6100E2D230 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C3DB67771F036AA100E2D230 /* Restable.swift */,
 				C3DB67781F036AA100E2D230 /* RestableService.swift */,
+				C3DB67771F036AA100E2D230 /* Restable.swift */,
 				C3DB67801F03AAF100E2D230 /* Castable.swift */,
 			);
 			name = Protocols;
@@ -470,6 +479,7 @@
 				C331135B1F048C590058CE7C /* LoadMoreCollectionViewCell.xib in Resources */,
 				C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */,
 				C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */,
+				C30A4AA01F0B9210007B628F /* TestViewController.xib in Resources */,
 				C3DB677D1F0373DD00E2D230 /* Beer.strings in Resources */,
 				C30E1F0F1F034E1600658AB2 /* LaunchScreen.storyboard in Resources */,
 				C3DB676E1F03557D00E2D230 /* BeerCollectionViewCell.xib in Resources */,
@@ -607,6 +617,7 @@
 			files = (
 				C3DB67671F03527E00E2D230 /* BaseNavigationController.swift in Sources */,
 				C3DB67701F0358E000E2D230 /* Beer.swift in Sources */,
+				C30A4A9F1F0B9210007B628F /* TestViewController.swift in Sources */,
 				C3DB67811F03AAF100E2D230 /* Castable.swift in Sources */,
 				C33113521F0488400058CE7C /* AppStyle.swift in Sources */,
 				C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */,
@@ -619,6 +630,7 @@
 				C3DB67731F035C2E00E2D230 /* UIViewExtension.swift in Sources */,
 				C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */,
 				C3DB67631F03524500E2D230 /* BeerViewController.swift in Sources */,
+				C30A4A9C1F0B912A007B628F /* BaseDetailNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +891,7 @@
 				C339CCE91F053C0800A2C2CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

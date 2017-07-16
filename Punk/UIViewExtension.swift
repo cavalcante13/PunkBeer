@@ -64,10 +64,4 @@ extension UIView {
             self.isHidden = newValue
         }
     }
-    
-    func rotate(angle: CGFloat) {
-        let radians = angle / 180.0 * .pi
-        let rotation = transform.rotated(by: radians);
-        self.transform = rotation
-    }
 }

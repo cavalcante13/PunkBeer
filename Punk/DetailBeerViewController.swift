@@ -35,6 +35,10 @@ class DetailBeerViewController: UIViewController {
         setup()
     }
     
+    deinit {
+        print("DetailBeerViewController deinit")
+    }
+    
     final fileprivate func setup() {
         nameBeer?.text = beer.name
         abvBeer?.text  = beer.abv?.str.appending("%")
@@ -47,6 +51,14 @@ class DetailBeerViewController: UIViewController {
         }else {
             imageBeer?.image = R.image.icBeerPlaceholder()
         }
-
+        
+        imageBeer?.isUserInteractionEnabled = true
+        imageBeer?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailBeerViewController.openBase)))
+    }
+    
+    @objc func openBase() {
+        let base = BaseDetailNavigationController(rootViewController: TestViewController())
+        present(base, animated: true, completion: nil)
+        
     }
 }

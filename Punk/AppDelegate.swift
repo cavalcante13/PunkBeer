@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    final private func presentBeer() {
+    final  func presentBeer() {
         let beerViewController   = BeerViewController()
         let navigationController = BaseNavigationController(rootViewController: beerViewController)
         
