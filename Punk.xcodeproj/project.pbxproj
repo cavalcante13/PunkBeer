@@ -22,6 +22,7 @@
 		C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */; };
 		C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */; };
 		C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B749C11F042B80005ED0E3 /* EndPoint.strings */; };
+		C3D020521F1BDDFB00E3742A /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D020511F1BDDFB00E3742A /* ImageViewExtension.swift */; };
 		C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB675D1F03518B00E2D230 /* R.generated.swift */; };
 		C3DB67631F03524500E2D230 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB67621F03524500E2D230 /* BeerViewController.swift */; };
 		C3DB67671F03527E00E2D230 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB67661F03527E00E2D230 /* BaseNavigationController.swift */; };
@@ -82,6 +83,7 @@
 		C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBeerViewController.xib; sourceTree = "<group>"; };
 		C3B749C11F042B80005ED0E3 /* EndPoint.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EndPoint.strings; sourceTree = "<group>"; };
+		C3D020511F1BDDFB00E3742A /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		C3DB675D1F03518B00E2D230 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		C3DB67621F03524500E2D230 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		C3DB67661F03527E00E2D230 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				C33113531F04889F0058CE7C /* UIViewControllerExtension.swift */,
 				C3DB67721F035C2E00E2D230 /* UIViewExtension.swift */,
+				C3D020511F1BDDFB00E3742A /* ImageViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				C3DB676D1F03557D00E2D230 /* BeerCollectionViewCell.swift in Sources */,
 				C33113541F04889F0058CE7C /* UIViewControllerExtension.swift in Sources */,
 				C3DB67731F035C2E00E2D230 /* UIViewExtension.swift in Sources */,
+				C3D020521F1BDDFB00E3742A /* ImageViewExtension.swift in Sources */,
 				C3DB675E1F03518B00E2D230 /* R.generated.swift in Sources */,
 				C3DB67631F03524500E2D230 /* BeerViewController.swift in Sources */,
 				C30A4A9C1F0B912A007B628F /* BaseDetailNavigationController.swift in Sources */,

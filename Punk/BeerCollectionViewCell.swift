@@ -22,6 +22,7 @@ class BeerCollectionViewCell: UICollectionViewCell {
             abvBeer?.text  = beer?.abv?.str.appending("%")
             
             if let imgUrl = beer?.imageUrl, let url = URL(string: imgUrl) {
+                
                 imageBeer?.sd_setImage(with: url, placeholderImage: R.image.icBeerPlaceholder())
             }else {
                 imageBeer?.image = R.image.icBeerPlaceholder()

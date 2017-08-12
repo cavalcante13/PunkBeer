@@ -17,7 +17,7 @@ protocol Restable {
 
 extension Restable {
     
-    func get<T>(parse : @escaping (Any)-> T?, callback : @escaping (Any?)-> ()) {
+    func get<T>(parse : @escaping (Any?)-> T?, callback : @escaping (Any?)-> ()) {
         let resourceURL = URL(string: path)!
         let session = URLSession.shared
         session.dataTask(with: resourceURL) { data, _, error in
