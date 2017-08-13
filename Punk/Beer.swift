@@ -10,9 +10,8 @@ import Foundation
 
 
 
-class Beer : NSObject {
+class Beer {
     
-    // maintain a weak reference
     var id          = 0
     var name        : String?
     var imageUrl    : String?
@@ -21,16 +20,13 @@ class Beer : NSObject {
     var tagline     : String?
     var desc        : String?
     var beers       : [Beer] = [Beer]()
+ 
+    init() {
+        
+    }
     
-    override init() {}
-}
-
-extension Beer {
-    
-    convenience init?(data : Any) {
-        self.init()
+    init?(data : Any) {
         if let jsonArray = data as? JSONArray {
-            
             for json in jsonArray {
                 let beer = Beer()
                 beer.id         = json["id"] as? Int ?? 0
@@ -44,5 +40,4 @@ extension Beer {
             }
         }
     }
-
 }

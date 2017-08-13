@@ -19,6 +19,7 @@
 		C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33113581F048C590058CE7C /* LoadMoreCollectionViewCell.swift */; };
 		C331135B1F048C590058CE7C /* LoadMoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33113591F048C590058CE7C /* LoadMoreCollectionViewCell.xib */; };
 		C339CCEF1F053F3800A2C2CA /* PunkRestableServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C339CCEE1F053F3800A2C2CA /* PunkRestableServiceTests.swift */; };
+		C3A0AE931F3FBE0500218984 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A0AE921F3FBE0500218984 /* Service.swift */; };
 		C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */; };
 		C3B749BE1F04271A005ED0E3 /* DetailBeerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */; };
 		C3B749C21F042B80005ED0E3 /* EndPoint.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3B749C11F042B80005ED0E3 /* EndPoint.strings */; };
@@ -80,6 +81,7 @@
 		C339CCE01F053C0800A2C2CA /* PunkServiceRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PunkServiceRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C339CCE41F053C0800A2C2CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C339CCEE1F053F3800A2C2CA /* PunkRestableServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PunkRestableServiceTests.swift; sourceTree = "<group>"; };
+		C3A0AE921F3FBE0500218984 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C3B749BB1F04271A005ED0E3 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		C3B749BC1F04271A005ED0E3 /* DetailBeerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBeerViewController.xib; sourceTree = "<group>"; };
 		C3B749C11F042B80005ED0E3 /* EndPoint.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EndPoint.strings; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 			name = Cases;
 			sourceTree = "<group>";
 		};
+		C3A0AE911F3FBDE200218984 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C3A0AE921F3FBE0500218984 /* Service.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		C3B749B91F0426F4005ED0E3 /* DetailBeer */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 		C3DB67641F03524F00E2D230 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				C3A0AE911F3FBDE200218984 /* Service */,
 				C3DB67651F03526100E2D230 /* NavigationControllers */,
 				C33113551F048C240058CE7C /* Views */,
 			);
@@ -623,6 +634,7 @@
 				C30A4A9F1F0B9210007B628F /* TestViewController.swift in Sources */,
 				C3DB67811F03AAF100E2D230 /* Castable.swift in Sources */,
 				C33113521F0488400058CE7C /* AppStyle.swift in Sources */,
+				C3A0AE931F3FBE0500218984 /* Service.swift in Sources */,
 				C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */,
 				C3DB677A1F036AA100E2D230 /* RestableService.swift in Sources */,
 				C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */,
