@@ -51,7 +51,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `BeerCollectionViewCell`.
     static let beerCollectionViewCell = _R.nib._BeerCollectionViewCell()
@@ -61,8 +61,6 @@ struct R: Rswift.Validatable {
     static let detailBeerViewController = _R.nib._DetailBeerViewController()
     /// Nib `LoadMoreCollectionViewCell`.
     static let loadMoreCollectionViewCell = _R.nib._LoadMoreCollectionViewCell()
-    /// Nib `TestViewController`.
-    static let testViewController = _R.nib._TestViewController()
     
     /// `UINib(name: "BeerCollectionViewCell", in: bundle)`
     static func beerCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -82,11 +80,6 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "LoadMoreCollectionViewCell", in: bundle)`
     static func loadMoreCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loadMoreCollectionViewCell)
-    }
-    
-    /// `UINib(name: "TestViewController", in: bundle)`
-    static func testViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.testViewController)
     }
     
     fileprivate init() {}
@@ -223,17 +216,6 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> LoadMoreCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadMoreCollectionViewCell
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct _TestViewController: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "TestViewController"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}

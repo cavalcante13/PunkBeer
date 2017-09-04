@@ -19,10 +19,6 @@ final class BeerViewController: UIViewController {
     final fileprivate var maxPage      = 1
     final fileprivate var limitPerPage = 20
     
-    private lazy var service : Service<Beer> = {
-        return Service(url: URL(string : strings.httpsApiPunkapiComV2BeersPageDPer_pageD(self.page, self.limitPerPage))!, parse: Beer.init)
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -45,10 +41,12 @@ final class BeerViewController: UIViewController {
     final internal func loadBeers() {
         AppStyle.startActivityIndicator()
 
-        service.get(completion: beer())
+        let service : Service<Beer> = Service(url: URL(string : strings.httpsApiPunkapiComV2BeersPageDPer_pageD(self.page, self.limitPerPage))!, parse: Beer.init)
+        
+        service.get(completion: responseBeer())
     }
     
-    final internal func beer()-> (Beer?)-> () {
+    final internal func responseBeer()-> (Beer?)-> () {
         return { [weak self] beer in
             if let beer = beer {
                 self?.beers += beer.beers
@@ -57,23 +55,10 @@ final class BeerViewController: UIViewController {
             }else {
                 self?.confirmAlert(title: "Erro", description: "", action: nil)
             }
-            AppStyle.startActivityIndicator()
+            AppStyle.stopActivityIndicator()
         }
     }
-    final internal func callBack()-> (Any)-> () {
-        return { [weak self] callback in
-            if let context = self {
-                if let beer = callback as? Beer {
-                    context.beers += beer.beers
-                    context.adjustMaxPages(with: context.beers.count)
-                    context.collectionView.reloadData()
-                }else if let error = callback as? Error {
-                    context.confirmAlert(title: "Erro", description: error.localizedDescription, action: nil)
-                }
-                AppStyle.stopActivityIndicator()
-            }
-        }
-    }
+    
     
     final internal func adjustMaxPages(with totalItens : Int) {
         page += 1

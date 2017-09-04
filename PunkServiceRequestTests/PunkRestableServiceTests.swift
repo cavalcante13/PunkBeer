@@ -15,14 +15,14 @@ class PunkRestableServiceTests: XCTestCase {
     func testLoadBeers() {
         let expectation = self.expectation(description: "Expected load beers from service")
         
-        let service : RestableService<Beer> = RestableService<Beer>(path: "https://api.punkapi.com/v2/beers?page=1&per_page=40")
-        service.get(parse: Beer.init) { data in
+        let service : Service<Beer> = Service<Beer>(url: URL(string : "https://api.punkapi.com/v2/beers?page=1&per_page=40")!, parse: Beer.init)
+        service.get { data in
             expectation.fulfill()
             
             XCTAssertNil(data as? Error)
-            XCTAssert(data is Beer)
+            XCTAssert(data != nil)
             
-            if let b = data as? Beer {
+            if let b = data {
                 XCTAssert(b.beers.count != 0)
                 
                 let beer = b.beers.first
@@ -35,6 +35,5 @@ class PunkRestableServiceTests: XCTestCase {
         
         waitForExpectations(timeout: 10, handler: nil)
     }
-
     
 }

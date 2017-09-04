@@ -9,6 +9,8 @@
 import Foundation
 
 
+public typealias JSON       = [String : Any]
+public typealias JSONArray  = [[String : Any]]
 
 struct Service<T> {
     let url     : URL
