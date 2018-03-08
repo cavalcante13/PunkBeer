@@ -10,72 +10,52 @@ import UIKit
 
 let strings = R.string.endPoint.self
 
-final class BeerViewController: UIViewController {
-    @IBOutlet private weak var collectionView: UICollectionView!
+final class BeerViewController: UIViewController, HomeBeerPresenterDelegate {
     
-    final fileprivate var beers : [Beer] = [Beer]()
-    
-    final fileprivate var page         = 1
-    final fileprivate var maxPage      = 1
-    final fileprivate var limitPerPage = 20
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        registerCells()
-        setup()
-        loadBeers()
-    }
-    
-    final fileprivate func registerCells() {
-        collectionView.register(R.nib.beerCollectionViewCell)
-        collectionView.register(R.nib.loadMoreCollectionViewCell)
-    }
-    
-    final fileprivate func setup() {
-        navigationItem.title               = R.string.beer.cervejas()
-        collectionView.delegate            = self
-        collectionView.dataSource          = self
-        collectionView.backgroundColor     = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
-    }
-   
-    final internal func loadBeers() {
-        AppStyle.startActivityIndicator()
-
-        let service : Service<Beer> = Service(url: URL(string : strings.httpsApiPunkapiComV2BeersPageDPer_pageD(self.page, self.limitPerPage))!, parse: Beer.init)
-        
-        service.get(completion: responseBeer())
-    }
-    
-    final internal func responseBeer()-> (Beer?)-> () {
-        return { [weak self] beer in
-            if let beer = beer {
-                self?.beers += beer.beers
-                self?.adjustMaxPages(with: (self?.beers.count)!)
-                self?.collectionView.reloadData()
-            }else {
-                self?.confirmAlert(title: "Erro", description: "", action: nil)
-            }
-            AppStyle.stopActivityIndicator()
+    //Mark: private properties
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.delegate            = self
+            collectionView.dataSource          = self
+            collectionView.backgroundColor     = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+            collectionView.register(R.nib.beerCollectionViewCell)
+            collectionView.register(R.nib.loadMoreCollectionViewCell)
         }
     }
     
+    var presenter : HomeBeerPresenter!
     
-    final internal func adjustMaxPages(with totalItens : Int) {
-        page += 1
-        maxPage = totalItens % limitPerPage == 0 ? page + 1 : page
+    //Init the view controller and presenter
+    init() {
+        presenter = HomeBeerPresenter(service: Service<Beer>(url: strings.httpsApiPunkapiComV2BeersPageDPer_pageD(1, 20), parse: Beer.init))
+        super.init(nibName: nil, bundle: nil)
     }
     
-    final fileprivate func resetPages() {
-        page    = 1
-        maxPage = 1
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = R.string.beer.cervejas()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] context in
-            self?.collectionView?.collectionViewLayout.invalidateLayout()
-            }, completion: nil)
+            if let `self` = self {
+                `self`.collectionView.collectionViewLayout.invalidateLayout()
+            }
+        }, completion: nil)
     }
+    
+    func presenter(_ presenter: HomeBeerPresenter, result: Result<Any>) {
+        if result. as? NSError {
+            
+        }
+    }
+    
+    
 }
 extension BeerViewController : UICollectionViewDelegateFlowLayout {
    
@@ -102,23 +82,23 @@ extension BeerViewController : UICollectionViewDelegateFlowLayout {
 extension BeerViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return page < maxPage ? beers.count + 1 : beers.count
+        return presenter.page < presenter.maxPage ? presenter.numberOfBeers() + 1 : presenter.numberOfBeers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item < beers.count {
+        if indexPath.item < presenter.numberOfBeers() {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.beerCollectionViewCell.identifier, for: indexPath) as! BeerCollectionViewCell
-            cell.beer = beers[indexPath.item]
+            cell.beer = presenter.beer(indexPath.item)
             return cell
         }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.loadMoreCollectionViewCell.identifier, for: indexPath)
-            loadBeers()
+            presenter.makeRequestBeers()
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailBeerViewController(beer : beers[indexPath.item]), animated: true)
+        navigationController?.pushViewController(DetailBeerViewController(beer : presenter.beer(indexPath.item)), animated: true)
     }
 }
 

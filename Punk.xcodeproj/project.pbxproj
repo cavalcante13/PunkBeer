@@ -35,6 +35,7 @@
 		F16E27371F5D9A6300297764 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E27361F5D9A6300297764 /* ArrayExtension.swift */; };
 		F16E273C1F5D9AE400297764 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E273A1F5D9AE400297764 /* NSLayoutConstraintExtension.swift */; };
 		F16E273D1F5D9AE400297764 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E273B1F5D9AE400297764 /* UIViewExtension.swift */; };
+		F19FDACF2051AE4B003E9B67 /* HomeBeerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FDACE2051AE4B003E9B67 /* HomeBeerPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		F16E27361F5D9A6300297764 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		F16E273A1F5D9AE400297764 /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		F16E273B1F5D9AE400297764 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F19FDACE2051AE4B003E9B67 /* HomeBeerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeerPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				C3DB67611F03520C00E2D230 /* ViewController */,
+				F19FDAD02051AE5C003E9B67 /* Presenter */,
 				C3DB676A1F03554200E2D230 /* Views */,
 				C3DB677B1F0373B700E2D230 /* Mixins */,
 			);
@@ -355,6 +358,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F19FDAD02051AE5C003E9B67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F19FDACE2051AE4B003E9B67 /* HomeBeerPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
 		F8FD8B9F56C9459298E27184 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +452,7 @@
 				TargetAttributes = {
 					C30E1F001F034E1600658AB2 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = W2ZNQR4GWX;
 						ProvisioningStyle = Automatic;
 					};
 					C30E1F141F034E1600658AB2 = {
@@ -514,9 +526,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Punk/Pods-Punk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -559,13 +578,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PunkTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		437DD9C73C8F1AD956B30871 /* [CP] Check Pods Manifest.lock */ = {
@@ -574,13 +596,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Punk-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A8FEAFEFD91F5F4A9E1792C /* [CP] Copy Pods Resources */ = {
@@ -628,6 +653,7 @@
 				F16E273D1F5D9AE400297764 /* UIViewExtension.swift in Sources */,
 				C3A0AE931F3FBE0500218984 /* Service.swift in Sources */,
 				C331135A1F048C590058CE7C /* LoadMoreCollectionViewCell.swift in Sources */,
+				F19FDACF2051AE4B003E9B67 /* HomeBeerPresenter.swift in Sources */,
 				C3B749BD1F04271A005ED0E3 /* DetailBeerViewController.swift in Sources */,
 				C30E1F051F034E1600658AB2 /* AppDelegate.swift in Sources */,
 				C3DB676D1F03557D00E2D230 /* BeerCollectionViewCell.swift in Sources */,
@@ -779,7 +805,7 @@
 			baseConfigurationReference = A88FE62557EF4F30475EA9F0 /* Pods-Punk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W2ZNQR4GWX;
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.costa;
@@ -793,7 +819,7 @@
 			baseConfigurationReference = 418B4A25F0D8FFAC1735E15A /* Pods-Punk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W2ZNQR4GWX;
 				INFOPLIST_FILE = Punk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.diego.costa;
