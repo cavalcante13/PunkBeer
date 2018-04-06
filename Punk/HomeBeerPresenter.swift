@@ -15,7 +15,7 @@ protocol HomeBeerPresenterDelegate : class {
 
 final class HomeBeerPresenter: NSObject {
 
-    final private var beers : [Beer] = []
+    final private(set) var beers : [Beer] = []
     
     final var page         = 1
     final var maxPage      = 1
@@ -23,13 +23,8 @@ final class HomeBeerPresenter: NSObject {
     
     weak var delegate : HomeBeerPresenterDelegate?
     
-    final var numberOfBeers : ()-> Int {
-        return { return self.beers.count }
-    }
     
-    final var beer : (Int)-> Beer {
-        return  { return self.beers[$0] }
-    }
+
     
     init(service : Service<Beer>) {
         super.init()
@@ -53,7 +48,7 @@ final class HomeBeerPresenter: NSObject {
         return { [weak self] beer in
             if let beer = beer, let `self` = self {
                 `self`.beers += beer.beers
-                `self`.adjustMaxPages(with: (`self`.numberOfBeers()))
+                `self`.adjustMaxPages(with: (`self`.beers.count))
                 `self`.delegate?.presenter(self, result: Result.success(beer))
             }else {
                 guard let `self` = self else { return }

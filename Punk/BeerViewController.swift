@@ -80,13 +80,13 @@ extension BeerViewController : UICollectionViewDelegateFlowLayout {
 extension BeerViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.page < presenter.maxPage ? presenter.numberOfBeers() + 1 : presenter.numberOfBeers()
+        return presenter.page < presenter.maxPage ? presenter.beers.count + 1 : presenter.beers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item < presenter.numberOfBeers() {
+        if indexPath.item < presenter.beers.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.beerCollectionViewCell.identifier, for: indexPath) as! BeerCollectionViewCell
-            cell.beer = presenter.beer(indexPath.item)
+            cell.beer = presenter.beers[indexPath.item]
             return cell
         }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.loadMoreCollectionViewCell.identifier, for: indexPath)
@@ -96,7 +96,7 @@ extension BeerViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailBeerViewController(beer : presenter.beer(indexPath.item)), animated: true)
+        navigationController?.pushViewController(DetailBeerViewController(beer : presenter.beers[indexPath.item]), animated: true)
     }
 }
 
