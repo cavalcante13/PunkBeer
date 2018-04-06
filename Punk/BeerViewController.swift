@@ -50,9 +50,7 @@ final class BeerViewController: UIViewController, HomeBeerPresenterDelegate {
     }
     
     func presenter(_ presenter: HomeBeerPresenter, result: Result<Any>) {
-        if result. as? NSError {
-            
-        }
+        
     }
     
     
